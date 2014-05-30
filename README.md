@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Ionic App Base
 =====================
 
@@ -86,3 +87,9 @@ Warning: the nightly version is not stable.
 ## Issues
 Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/contribute/#issues) to the main Ionic repository. On the other hand, pull requests are welcome here!
 
+=======
+Tiendas
+=======
+
+Tiendas 
+>>>>>>> 47b7a0be42fa836ea9ed4621441b6f6f7f38ebc4
