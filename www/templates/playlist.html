@@ -1,0 +1,19 @@
+<div class="bar bar-header bar-calm">
+  <h1 class="title">{{marca}}</h1>
+</div>
+	<ion-content overflow-scroll="true" class="has-header">
+	    <ion-list>
+	      <ion-item ng-repeat="producto in productos" href="#/app/product/{{producto.id}}">
+			<div class="list">			
+			    <a class="item item-thumbnail-left" href="#/app/product/{{producto.id}}">
+			      <img src="{{producto.thumbnail}}">
+			      <h2>{{producto.title}}</h2>
+			      <p>$ {{producto.price}} o {{producto.installments.quantity}} cuotas de $ {{producto.installments.amount}}</p>
+			      <h5>Disponibles: {{producto.available_quantity}}</h5>
+			    </a>
+			</div>
+		  </ion-item>	    
+	    </ion-list>
+	</ion-content>
+
+	

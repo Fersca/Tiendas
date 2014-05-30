@@ -1,0 +1,14 @@
+<div class="bar bar-header bar-balanced">
+  <div class="h1 title">{{producto.title}}</div>
+</div>
+<ion-content overflow-scroll="true" class="has-header">
+	<button class="button button-block button-calm">
+		<i class="icon ion-music-note"></i>
+	  	Comprar a $ {{producto.price}}
+	</button>
+	<div class="list card">	
+	  <div class="item item-image">
+	    <img src="{{producto.pictures[0].url}}">
+	  </div>	  	
+	</div>
+</ion-content>

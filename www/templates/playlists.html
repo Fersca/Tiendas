@@ -1,0 +1,20 @@
+<div class="bar bar-header bar-assertive">
+  <h1 class="title">Tiedas Oficiales</h1>
+</div>
+  <!--
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  -->
+  <ion-content overflow-scroll="true" class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists">
+		<div class="row">
+		  <div class="col"><center><a  href="#/app/playlists/{{playlist[0].brands[0].name}}/{{playlist[0].user_id}}"><img src="{{playlist[0].brands[0].small_logo}}" height="70" width="85"></a></center></div>
+		  <div class="col"><center><a  href="#/app/playlists/{{playlist[1].brands[0].name}}/{{playlist[1].user_id}}"><img src="{{playlist[1].brands[0].small_logo}}" height="70" width="85"></a></center></div>
+		  <div class="col"><center><a  href="#/app/playlists/{{playlist[2].brands[0].name}}/{{playlist[2].user_id}}"><img src="{{playlist[2].brands[0].small_logo}}" height="70" width="85"></a></center></div>
+		</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
