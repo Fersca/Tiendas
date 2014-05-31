@@ -24,6 +24,6 @@
     </feature>
     
     <preference name="SplashScreen" value="vestido" />
-	<preference name="SplashScreenDelay" value="10000" />
+	<preference name="SplashScreenDelay" value="4000" />
 	
 </widget>
