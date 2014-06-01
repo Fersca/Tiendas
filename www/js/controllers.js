@@ -1,5 +1,5 @@
-angular.module('starter.controllers', ['starter.services','ionic'])
-
+angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
+  
 .controller('AppCtrl', function($scope) {
 })
 
@@ -7,13 +7,13 @@ angular.module('starter.controllers', ['starter.services','ionic'])
 	
   // Setup the loader
   $ionicLoading.show({
-    content: 'Loading',
+    content: '<i class="icon ion-loading-c"></i>',
     animation: 'fade-in',
     showBackdrop: true,
     maxWidth: 200,
     showDelay: 0
   });
-  	
+   	
 	var res = $resource('https://api.mercadolibre.com/sites/MLA/apparel/brands');
  	var Result = res.query({},function(res1) {	 
 	
@@ -58,7 +58,7 @@ angular.module('starter.controllers', ['starter.services','ionic'])
 .controller('PlaylistCtrl', function($scope, $resource, $stateParams,$ionicLoading, $timeout) {
   // Setup the loader
   $ionicLoading.show({
-    content: 'Loading',
+    content: '<i class="icon ion-star"></i>',
     animation: 'fade-in',
     showBackdrop: true,
     maxWidth: 200,
@@ -121,7 +121,7 @@ angular.module('starter.controllers', ['starter.services','ionic'])
 .controller('ProductCtrl', function($scope, $resource, $stateParams,$ionicLoading, $timeout) {
   // Setup the loader
   $ionicLoading.show({
-    content: 'Loading',
+    content: '<i class="icon ion-loading-c"></i>',
     animation: 'fade-in',
     showBackdrop: true,
     maxWidth: 200,
@@ -132,8 +132,21 @@ angular.module('starter.controllers', ['starter.services','ionic'])
 	var res = $resource(cadena);
  	var Result = res.get({},function(res1) {	 
 		$scope.producto = res1;
+		$scope.abrir = function() {
+			navigator.app.loadUrl(res1.permalink, {openExternal : true});
+		 };
 		$ionicLoading.hide();
  	});
+
+})
+
+.controller('MlCtrl', function($scope, $resource, $stateParams,$ionicLoading,$sce) {
+    
+	$scope.producto = 'https://buyingflow.mercadolibre.com.ar/checkout/start?item_id=MLA505909752&variation=6246284892'
+    
+    $scope.trustSrc = function(src) {
+    	return $sce.trustAsResourceUrl(src);
+  	}
 
 })
 

@@ -67,6 +67,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.ml', {
+      url: "/ml",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/ml.html",
+          controller: 'MlCtrl'
+        }
+      }
+    })
+
     .state('app.single', {
       url: "/playlists/:brand/:playlistId",
       views: {
