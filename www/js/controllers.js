@@ -58,7 +58,7 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 .controller('PlaylistCtrl', function($scope, $resource, $stateParams,$ionicLoading, $timeout) {
   // Setup the loader
   $ionicLoading.show({
-    content: '<i class="icon ion-star"></i>',
+    content: '<i class="icon ion-loading-c"></i>',
     animation: 'fade-in',
     showBackdrop: true,
     maxWidth: 200,
