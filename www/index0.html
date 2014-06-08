@@ -1,38 +1,35 @@
-<html ng-app="ionicApp">
+<!DOCTYPE html>
+<html ng-app="starter">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    
-    <title>Tiendas Oficiales</title>
+    <title></title>
 
     <link href="http://code.ionicframework.com/1.0.0-beta.6/css/ionic.css" rel="stylesheet">
-    <script src="http://code.ionicframework.com/1.0.0-beta.6/js/ionic.bundle.js"></script>    
+    <script src="http://code.ionicframework.com/1.0.0-beta.6/js/ionic.bundle.js"></script>
     <script src="lib/ionic/js/angular/angular-resource.js"></script>
         
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/page2.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
-    
+                
   </head>
 
-  <body bgcolor="#E6E6FA">
+  <body>
     
-    <ion-nav-bar class="nav-title-slide-ios7 bar-dark">
+    <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
       <ion-nav-back-button class="button-icon ion-arrow-left-c">
       </ion-nav-back-button>
     </ion-nav-bar>
-
              
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
+
     <script id="tabs.html" type="text/ng-template">
-    <ion-nav-view name="home-tab"></ion-nav-view>
-    	
-    	<!--
       <ion-tabs class="tabs-icon-top tabs-positive">
 
         <ion-tab title="Home" icon="ion-home" href="#/tab/home">
@@ -48,9 +45,8 @@
         </ion-tab>
 
       </ion-tabs>
-      -->
-    </script>
-
+    </script>    
+    
     <script id="home.html" type="text/ng-template">
     
 		<ion-view title="Tiedas Oficiales">
@@ -59,9 +55,9 @@
 		    <ion-list>
 		      <ion-item ng-repeat="playlist in playlists">
 				<div class="row" row-center>
-				  <div class="col"><a  href="#/tab/playlists/{{playlist[0].brands[0].name}}/{{playlist[0].user_id}}"><img src="{{playlist[0].brands[0].big_logo}}" height="90" width="90"></a></div>
-				  <div class="col"><a  href="#/tab/playlists/{{playlist[1].brands[0].name}}/{{playlist[1].user_id}}"><img src="{{playlist[1].brands[0].big_logo}}" height="90" width="90"></a></div>
-				  <div class="col"><a  href="#/tab/playlists/{{playlist[2].brands[0].name}}/{{playlist[2].user_id}}"><img src="{{playlist[2].brands[0].big_logo}}" height="90" width="90"></a></div>
+				  <div class="col"><a  href="#/app/playlists/{{playlist[0].brands[0].name}}/{{playlist[0].user_id}}"><img src="{{playlist[0].brands[0].big_logo}}" height="90" width="90"></a></div>
+				  <div class="col"><a  href="#/app/playlists/{{playlist[1].brands[0].name}}/{{playlist[1].user_id}}"><img src="{{playlist[1].brands[0].big_logo}}" height="90" width="90"></a></div>
+				  <div class="col"><a  href="#/app/playlists/{{playlist[2].brands[0].name}}/{{playlist[2].user_id}}"><img src="{{playlist[2].brands[0].big_logo}}" height="90" width="90"></a></div>
 				</div>
 		      </ion-item>
 		    </ion-list>
@@ -72,4 +68,4 @@
      </script>
 
   </body>
-</html>
+ </html>

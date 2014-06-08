@@ -134,8 +134,17 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 		$scope.producto = res1;
 		$scope.abrir = function() {
 			navigator.app.loadUrl(res1.permalink, {openExternal : true});
-		 };
+		}
 		$ionicLoading.hide();
+		 
+		/* 
+		var cadenaDesc = 'https://api.mercadolibre.com/items/'+$stateParams.prodId+'/description'
+		var resDesc = $resource(cadenaDesc);
+ 		var ResultDesc = resDesc.get({},function(resDesc1) {	 
+			$scope.description = resDesc1.text;
+			$ionicLoading.hide();
+		 });
+		 */ 
  	});
 
 })

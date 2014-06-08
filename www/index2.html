@@ -1,0 +1,116 @@
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+    <title>Ionic Phonegap Demo</title>
+
+    <link href="lib/ionic/css/ionic.min2.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.min2.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+
+	<script src="js/page.js"></script>
+  </head>
+
+  <body>
+    
+    <ion-nav-bar animation="nav-title-slide-ios7" 
+             type="bar-positive" 
+             back-button-type="button-icon" 
+             back-button-icon="ion-arrow-left-c"></ion-nav-bar>
+             
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+
+    <script id="tabs.html" type="text/ng-template">
+      <ion-tabs tabs-style="tabs-icon-top" tabs-type="tabs-positive">
+
+        <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+          <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="About" icon="ion-ios7-information" href="#/tab/about">
+          <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Contact" icon="ion-ios7-world" ui-sref="tabs.contact">
+          <ion-nav-view name="contact-tab"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
+    </script>
+
+    <script id="home.html" type="text/ng-template">
+      <ion-view title="'ionic phonegap mega demo'">
+        <ion-content has-header="true" padding="true">
+          <p>Example of ionic framework with phonegap api.</p>		  
+          <div class="list">
+		  <a class="item item-icon-left" href="#/tab/accelerometer">
+			<i class="icon ion-arrow-expand"></i>
+			Accelerometer
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/camera">
+			<i class="icon ion-camera"></i>
+			Camera
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/capture">
+			<i class="icon ion-link"></i>
+			Capture Media
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/compass">
+			<i class="icon ion-compass"></i>
+			Compass
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/connection">
+			<i class="icon ion-wifi"></i>
+			Connection
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/contacts">
+			<i class="icon ion-android-social"></i>
+			Contacts
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/device">
+			<i class="icon ion-iphone"></i>
+			Device Properties
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/battery">
+			<i class="icon ion-battery-half"></i>
+			Battery Status
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/location">
+			<i class="icon ion-ios7-location"></i>
+			Geolocation
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/file">
+			<i class="icon ion-document-text"></i>
+			File
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/globalization">
+			<i class="icon ion-earth"></i>
+			Globalization
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/browser">
+			<i class="icon ion-ios7-browsers"></i>
+			In App Browser
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/media">
+			<i class="icon ion-ios7-musical-notes"></i>
+			Media
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/notification">
+			<i class="icon ion-alert"></i>
+			Notification
+		  </a>
+		  <a class="item item-icon-left" href="#/tab/storage">
+			<i class="icon ion-android-storage"></i>
+			Storage
+		  </a>
+		  </div>
+		  <br /><br />
+        </ion-content>
+      </ion-view>
+    </script>
+
+  </body>
+</html>
