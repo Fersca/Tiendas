@@ -10,11 +10,17 @@
 		<ion-slide-box show-pager="true">
 
 			<ion-slide ng-repeat="foto in producto.pictures">
-				<img src="{{foto.url}}" height="500" width="300">
+			<div class="item item-image">
+				<img src="{{foto.url}}" >
+			</div>	
 			</ion-slide>
 			
 		</ion-slide-box>
+	  <div class="item item-divider">
+	  	Disponibles:  {{producto.available_quantity}}
+	  </div>
 			
+
 		<br><br><br>	  
 
 	  <!--<div ng-bind-html="description"></div>-->
