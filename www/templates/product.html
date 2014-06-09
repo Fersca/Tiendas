@@ -1,21 +1,34 @@
-<ion-view title="{{producto.title}}">
+<ion-view title="{{marca}}">
 <ion-content overflow-scroll="true" class="has-header">
-	<div class="list card">	
-	  <div class="item item-image">
-	    <img src="{{producto.pictures[0].url}}">
-	  </div>	  	 
+	  <div class="item item-divider">
+	  	{{producto.title}}
+	  </div>
+	  <div class="item item-divider">
+	  	$ {{producto.price}}
+	  </div>
+	
+		<ion-slide-box show-pager="true">
+
+			<ion-slide ng-repeat="foto in producto.pictures">
+				<img src="{{foto.url}}" height="500" width="300">
+			</ion-slide>
+			
+		</ion-slide-box>
+			
+		<br><br><br>	  
+
 	  <!--<div ng-bind-html="description"></div>-->
 	</div>
 </ion-content>
 <div class="tabs tabs-icon-only tabs-dark">
 
-  <a class="tab-item" href="#/app/">
+  <a class="tab-item" href="#/tab/">
     <i class="icon ion-home"></i>
   </a>
   <a class="tab-item">
     <i class="icon ion-share"></i>
   </a>  
-  <a class="tab-item" href="#/app/ml">
+  <a class="tab-item" href="#/tab/ml">
     <i class="icon ion-bag"></i>
   </a>    
 </div>

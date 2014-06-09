@@ -67,8 +67,21 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 	
 	var cadena = 'https://api.mercadolibre.com/sites/MLA/search?seller_id='+$stateParams.playlistId
 	var res = $resource(cadena);
- 	var Result = res.get({},function(res1) {	 
-		$scope.productos = res1.results;
+ 	var Result = res.get({},function(res1) {
+ 	
+ 		var productos1 = []
+ 	
+		var index1;
+		for (index1 = 0; index1 < res1.results.length; index1=index1+2) {
+			productos1.push([res1.results[index1],res1.results[index1+1]])
+		}
+ 		 		 
+		if (res1.results.length%2==1){
+			productos1[productos1.length-1][1] = productos1[0][0]; 
+		} 
+ 		 		 
+		//$scope.productos = res1.results;
+		$scope.productos = productos1;
 		$scope.marca = $stateParams.brand;
 		$ionicLoading.hide();
  	});
@@ -118,7 +131,7 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 })
 
 
-.controller('ProductCtrl', function($scope, $resource, $stateParams,$ionicLoading, $timeout) {
+.controller('ProductCtrl', function($scope, $resource, $stateParams,$ionicLoading, $timeout,$ionicSlideBoxDelegate) {
   // Setup the loader
   $ionicLoading.show({
     content: '<i class="icon ion-loading-c"></i>',
@@ -132,11 +145,14 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 	var res = $resource(cadena);
  	var Result = res.get({},function(res1) {	 
 		$scope.producto = res1;
+		$scope.marca = $stateParams.marca
 		$scope.abrir = function() {
 			navigator.app.loadUrl(res1.permalink, {openExternal : true});
 		}
 		$ionicLoading.hide();
-		 
+				 
+		$ionicSlideBoxDelegate.update();		 
+				 
 		/* 
 		var cadenaDesc = 'https://api.mercadolibre.com/items/'+$stateParams.prodId+'/description'
 		var resDesc = $resource(cadenaDesc);

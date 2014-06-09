@@ -33,7 +33,7 @@ angular.module('ionicApp', ['ionic', 'starter.controllers'])
       }
     })
     .state('tab.product', {
-      url: "/product/:prodId",
+      url: "/product/:prodId/:marca",
       views: {
         'home-tab' :{
           templateUrl: "templates/product.html",

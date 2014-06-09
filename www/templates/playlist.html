@@ -1,23 +1,39 @@
 <ion-view title="{{marca}}">
 <ion-content overflow-scroll="true" class="has-header">
     <ion-list>
-      <ion-item ng-repeat="producto in productos" href="#/tab/product/{{producto.id}}">
-		<!--
-		<div class="list">			
-		    <a class="item item-thumbnail-left" href="#/tab/product/{{producto.id}}">
-		      <img src="{{producto.thumbnail}}">
-		      <h2>{{producto.title}}</h2>
-		      <p>$ {{producto.price}} o {{producto.installments.quantity}} cuotas de $ {{producto.installments.amount}}</p>
-		      <h5>Disponibles: {{producto.available_quantity}}</h5>
-		    </a>
+      <ion-item ng-repeat="producto in productos">
+
+		<div class="row">
+		  <div class="col">
+			  <center>
+			  	<a href="#/tab/product/{{producto[0].id}}/{{marca}}">
+					<button class="button button-outline button-stable">
+						<div>
+							$ {{producto[0].price}}
+						</div>				 			
+						<img src="{{producto[0].thumbnail}}" height="100" width="100">
+						<br><br>
+					</button>	
+				</a>
+			  </center>  
+		  </div>
+		  <div class="col">
+			  <center>
+			  	<a href="#/tab/product/{{producto[1].id}}/{{marca}}">
+					<button class="button button-outline button-stable">
+						<div>
+							$ {{producto[1].price}}
+						</div>				 			
+						<img src="{{producto[1].thumbnail}}" height="100" width="100">
+						<br><br>
+					</button>	
+				</a>
+			  </center>
+		  </div>
 		</div>
-		-->
-			  <center><img src="{{producto.thumbnail}}" height="140" width="140"></center>
-		      <h2>{{producto.title}}</h2>
-		      <p>$ {{producto.price}} o {{producto.installments.quantity}} cuotas de $ {{producto.installments.amount}}</p>
-		      <h5>Disponibles: {{producto.available_quantity}}</h5>				     
 	  </ion-item>	    
     </ion-list>
+    <br><br>    
 	</ion-content>
 	
 	<div class="tabs tabs-icon-only tabs-dark">
