@@ -1,12 +1,14 @@
-<ion-view title="Tiedas Oficiales">
+<ion-view title="">
   
-    <ion-content overflow-scroll="true" class="has-header">        
+    <ion-content overflow-scroll="true" class="has-header">
+            
     <ion-list>
+    
       <ion-item ng-repeat="playlist in playlists">
 		<div class="row" row-center>
-		  <div class="col"><a  href="#/app/playlists/{{playlist[0].brands[0].name}}/{{playlist[0].user_id}}"><img src="{{playlist[0].brands[0].big_logo}}" height="90" width="90"></a></div>
-		  <div class="col"><a  href="#/app/playlists/{{playlist[1].brands[0].name}}/{{playlist[1].user_id}}"><img src="{{playlist[1].brands[0].big_logo}}" height="90" width="90"></a></div>
-		  <div class="col"><a  href="#/app/playlists/{{playlist[2].brands[0].name}}/{{playlist[2].user_id}}"><img src="{{playlist[2].brands[0].big_logo}}" height="90" width="90"></a></div>
+		  <div class="col"><a  href="#/app/playlists/{{playlist[0].brands[0].name}}/{{playlist[0].user_id}}"><img src="{{playlist[0].brands[0].big_logo}}" height="80" width="80"></a></div>
+		  <div class="col"><a  href="#/app/playlists/{{playlist[1].brands[0].name}}/{{playlist[1].user_id}}"><img src="{{playlist[1].brands[0].big_logo}}" height="80" width="80"></a></div>
+		  <div class="col"><a  href="#/app/playlists/{{playlist[2].brands[0].name}}/{{playlist[2].user_id}}"><img src="{{playlist[2].brands[0].big_logo}}" height="80" width="80"></a></div>
 		</div>
       </ion-item>
     </ion-list>

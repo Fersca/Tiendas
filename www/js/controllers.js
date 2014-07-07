@@ -69,6 +69,71 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 	var res = $resource(cadena);
  	var Result = res.get({},function(res1) {
  	
+ 		var productIds = ""
+		for (var index2 = 0; index2 < res1.results.length; index2++) {
+			productIds = productIds+res1.results[index2].id+',' 
+		}
+ 	 	
+ 		var conexion = 'https://api.mercadolibre.com/items?ids='+productIds+'&attributes=id,price,thumbnail,pictures';
+ 		
+ 		var res1 = $resource(conexion);
+ 		var Result = res1.query({},function(res2) {
+ 		
+ 			var pixels = 140
+	 		var productos1 = []
+	 	
+			var index1;
+			for (index1 = 0; index1 < res2.length; index1=index1+2) {
+			
+				var alto0=0
+				var ancho0=0
+				var alto1=0
+				var ancho1=0
+				
+				var tamanio = res2[index1].pictures[0].size.split("x");
+				if (tamanio[0]>tamanio[1]){
+					var tamanio2 = pixels*tamanio[1]/tamanio[0]
+					alto0 = pixels
+					ancho0 = tamanio2
+				} else {
+					var tamanio2 = pixels*tamanio[0]/tamanio[1]
+					alto0 = tamanio2
+					ancho0 = pixels
+				}
+
+				if ((index1+1) < res2.length){
+					var tam2= res2[index1+1].pictures[0].size.split("x");
+					if (tam2[0]>tam2[1]){
+						var tamanio2 = pixels*tam2[1]/tam2[0]
+						alto1 = pixels
+						ancho1 = tamanio2
+					} else {
+						var tamanio2 = pixels*tam2[0]/tam2[1]
+						alto1 = tamanio2
+						ancho1 = pixels		
+					}
+				}					
+				productos1.push([res2[index1],res2[index1+1],ancho0,alto0,ancho1,alto1])
+			}
+	 		 		 
+			if (res2.length%2==1){
+				productos1[productos1.length-1][1] = productos1[0][0]; 
+			} 
+	 		 		 
+			$scope.productos = productos1;
+			$scope.marca = $stateParams.brand;
+			$ionicLoading.hide();
+ 		
+
+ 		},function(err2){
+	 		alert('Error');
+	 		$scope.marca = $stateParams.brand;
+	 		$ionicLoading.hide();
+ 		}
+ 		);
+ 		
+ 		
+ 		/*	
  		var productos1 = []
  	
 		var index1;
@@ -84,7 +149,13 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 		$scope.productos = productos1;
 		$scope.marca = $stateParams.brand;
 		$ionicLoading.hide();
- 	});
+		*/
+ 	},function(err1){
+ 		alert('Error');
+ 		$scope.marca = $stateParams.brand;
+ 		$ionicLoading.hide();
+ 	}
+ 	);
 
   // Set a timeout to clear loader, however you would actually call the $ionicLoading.hide(); method whenever everything is ready or loaded.
 
@@ -145,6 +216,7 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 	var res = $resource(cadena);
  	var Result = res.get({},function(res1) {	 
 		$scope.producto = res1;
+		$scope.variations = res1.variations.length>0;
 		$scope.marca = $stateParams.marca
 		$scope.abrir = function() {
 			navigator.app.loadUrl(res1.permalink, {openExternal : true});

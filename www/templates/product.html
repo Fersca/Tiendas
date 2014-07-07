@@ -1,33 +1,58 @@
-<ion-view title="{{marca}}">
+<ion-view title="">
 <ion-content overflow-scroll="true" class="has-header">
-	  <div class="item item-divider">
+	  <div class="item item-text-wrap">
 	  	{{producto.title}}
 	  </div>
+<div ng-if="variations" class="item item-divider">
+<div class="list">
+
+  <label class="item item-input item-select ">
+    <div class="input-label">
+      Talle y Color
+    </div>
+    <select>
+	    <option ng-repeat="varia in producto.variations">
+	      {{varia.attribute_combinations[2].value_name}} {{varia.attribute_combinations[0].value_name}} {{varia.attribute_combinations[1].value_name}} 
+	    </option>
+    </ion-item>
+    </select>
+  </label>
+
+</div>
+	</div>
+	  
+	  <!--
 	  <div class="item item-divider">
-	  	$ {{producto.price}}
+	  <button class="button button-full icon-left ion-bag button-positive">$ {{producto.price}}</button> 
 	  </div>
-	
+	  -->
 		<ion-slide-box show-pager="true">
 
 			<ion-slide ng-repeat="foto in producto.pictures">
 			<div class="item item-image">
 				<img src="{{foto.url}}" >
 			</div>	
-			</ion-slide>
-			
+			</ion-slide>			
 		</ion-slide-box>
-	  <div class="item item-divider">
-	  	Disponibles:  {{producto.available_quantity}}
-	  </div>
-			
-
-		<br><br><br>	  
-
-	  <!--<div ng-bind-html="description"></div>-->
+		
+		<br><br>
+	  <!--
+	  
+	  <div ng-bind-html="description"></div>
+	  -->
+	  
 	</div>
+		
 </ion-content>
+
 <div class="tabs tabs-icon-only tabs-dark">
 
+
+  <a href="#/tab/ml">
+   <button class="button icon-left ion-bag button-positive">$ {{producto.price}}</button>
+  </a>
+
+<!--
   <a class="tab-item" href="#/tab/">
     <i class="icon ion-home"></i>
   </a>
@@ -36,6 +61,8 @@
   </a>  
   <a class="tab-item" href="#/tab/ml">
     <i class="icon ion-bag"></i>
-  </a>    
+  </a>
+  -->    
 </div>
+
 </ion-view>
