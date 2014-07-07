@@ -24,7 +24,8 @@
     <ion-nav-bar class="nav-title-slide-ios7 bar-dark">
 <div class="button-bar">
   <a class="button" href="#/tab/home">Tiendas</a>
-  <a class="button">Categorias</a>
+  <a class="button" href="#/tab/categories">Categorias</a>
+  <a class="button">Favoritos</a>
 </div>    
 
     	<!--
@@ -59,7 +60,7 @@
 
     <script id="home.html" type="text/ng-template">
     
-		<ion-view title="Tiedas Oficiales">
+		<ion-view title="">
 		  
 		    <ion-content overflow-scroll="true" class="has-header">        
 		    <ion-list>
@@ -68,6 +69,24 @@
 				  <div class="col"><a  href="#/tab/playlists/{{playlist[0].brands[0].name}}/{{playlist[0].user_id}}"><img src="{{playlist[0].brands[0].big_logo}}" height="90" width="90"></a></div>
 				  <div class="col"><a  href="#/tab/playlists/{{playlist[1].brands[0].name}}/{{playlist[1].user_id}}"><img src="{{playlist[1].brands[0].big_logo}}" height="90" width="90"></a></div>
 				  <div class="col"><a  href="#/tab/playlists/{{playlist[2].brands[0].name}}/{{playlist[2].user_id}}"><img src="{{playlist[2].brands[0].big_logo}}" height="90" width="90"></a></div>
+				</div>
+		      </ion-item>
+		    </ion-list>
+		
+		  </ion-content>
+		</ion-view>
+    
+     </script>
+    <script id="categories.html" type="text/ng-template">
+    
+		<ion-view title="">
+		  
+		    <ion-content overflow-scroll="true" class="has-header">        
+		    <ion-list>
+		      <ion-item ng-repeat="categ in categories">
+				<div class="row" row-center>
+				  <div class="col"><div style="font-size: small;">{{categ[0].name.substring(0,18)}}</div><img src="{{categ[0].picture}}" height="120" width="120"></div>
+				  <div class="col"><div style="font-size: small;">{{categ[1].name.substring(0,18)}}</div><img src="{{categ[1].picture}}" height="120" width="120"></div>
 				</div>
 		      </ion-item>
 		    </ion-list>

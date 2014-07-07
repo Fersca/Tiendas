@@ -3,6 +3,38 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 .controller('AppCtrl', function($scope) {
 })
 
+.controller('CategoriesCtrl', function($scope, $resource,$ionicLoading,$timeout) {
+	
+  // Setup the loader
+  $ionicLoading.show({
+    content: '<i class="icon ion-loading-c"></i>',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+   	
+   	var listaFinal = [];
+   	
+   	listaFinal.push(
+   		[
+   		{name:"Accesorios de Moda",id:"MLA3114",picture:"http://resources.mlstatic.com/category/images/bbfd35b1-ae02-4d15-8a49-09bf1d0a16a0.png"},
+   		{name:"Bermudas y Shorts",id:"MLA109276",picture:"http://resources.mlstatic.com/category/images/7f2d3ff8-e8c9-4c6b-99c9-ee0fdafcba77.png"}
+   		]
+   	);
+   	listaFinal.push(
+   		[
+   		{name:"Buzos y Hoodies",id:"MLA109085",picture:"http://resources.mlstatic.com/category/images/1e5072a0-769a-46e8-8258-5778eb2b1e95.png"},
+   		{name:"Camisas, Chombas y Blusas",id:"MLA109049",picture:"http://resources.mlstatic.com/category/images/339e3693-137c-49c1-99d8-716a6c06c5d8.png"}
+   		]
+   	);
+   	
+   	$scope.categories = listaFinal;	
+	$ionicLoading.hide();
+   	  
+})
+
+
 .controller('PlaylistsCtrl', function($scope, $resource,$ionicLoading,$timeout) {
 	
   // Setup the loader

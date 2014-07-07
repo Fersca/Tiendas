@@ -32,6 +32,15 @@ angular.module('ionicApp', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('tab.categories', {
+      url: "/categories",
+      views: {
+        'home-tab': {
+          templateUrl: "categories.html",
+          controller: 'CategoriesCtrl'
+        }
+      }
+    })    
     .state('tab.product', {
       url: "/product/:prodId/:marca",
       views: {

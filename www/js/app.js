@@ -36,6 +36,15 @@ angular.module('starter', ['starter.services','ionic','ngSanitize'])
         }
       }
     })
+    .state('app.categories', {
+      url: "/categories",
+      views: {
+        'menuContent' :{
+          templateUrl: "categories.html",
+          controller: 'CategoriesCtrl'
+        }
+      }
+    })
 
     .state('app.product', {
       url: "/product/:prodId",
