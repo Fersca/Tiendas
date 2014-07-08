@@ -1,7 +1,6 @@
 <ion-view>
-<!--<ion-view title="">-->
 <div class="bar bar-subheader">
-  <h2 class="title">{{marca}}</h2>
+  <h2 class="title">{{categoria}}</h2>
 </div>
 <ion-content overflow-scroll="true" class="has-header">
 <br><br>
@@ -15,7 +14,7 @@
 							$ {{producto[0].price}}
 						</div>				 			
 			  
-			  	<a href="#/tab/product/{{producto[0].id}}/{{marca}}">
+			  	<a href="#/tab/product/{{producto[0].id}}/{{categoria}}">
 
 						<img src="{{producto[0].pictures[0].url}}" height="{{producto[2]}}" width="{{producto[3]}}">
 	
@@ -28,7 +27,7 @@
 							$ {{producto[1].price}}
 						</div>				 			
 			  
-			  	<a href="#/tab/product/{{producto[1].id}}/{{marca}}">
+			  	<a href="#/tab/product/{{producto[1].id}}/{{categoria}}">
 
 						<img src="{{producto[1].pictures[0].url}}" height="{{producto[4]}}" width="{{producto[5]}}">
 

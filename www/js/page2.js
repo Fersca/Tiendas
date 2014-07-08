@@ -40,7 +40,16 @@ angular.module('ionicApp', ['ionic', 'starter.controllers'])
           controller: 'CategoriesCtrl'
         }
       }
-    })    
+    }) 
+    .state('tab.itemcateg', {
+      url: "/itemcateg/:categ/:categoria",
+      views: {
+        'home-tab': {
+          templateUrl: "templates/itemcateg.html",
+          controller: 'ItemsCategsCtrl'
+        }
+      }
+    })     
     .state('tab.product', {
       url: "/product/:prodId/:marca",
       views: {
@@ -52,7 +61,7 @@ angular.module('ionicApp', ['ionic', 'starter.controllers'])
     })
 
     .state('tab.ml', {
-      url: "/ml",
+      url: "/ml/:item/:variation",
       views: {
         'home-tab' :{
           templateUrl: "templates/ml.html",

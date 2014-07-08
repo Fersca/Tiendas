@@ -11,13 +11,14 @@
     <div class="input-label">
       Talle y Color
     </div>
-    <select>
-	    <option ng-repeat="varia in producto.variations">
+    <select id="select">
+	    <option ng-repeat="varia in producto.variations" value={{varia.id}}>
 	      {{varia.attribute_combinations[2].value_name}} {{varia.attribute_combinations[0].value_name}} {{varia.attribute_combinations[1].value_name}} 
 	    </option>
     </ion-item>
     </select>
   </label>
+  <input type="hidden" name="pip" id="pip" value="{{producto.id}}">
 
 </div>
 	</div>
@@ -49,9 +50,9 @@
 <div class="tabs tabs-icon-only tabs-dark">
 
 
-  <a href="#/tab/ml">
-   <button class="button icon-left ion-bag button-positive">$ {{producto.price}}</button>
-  </a>
+  <!-- <a href="#/tab/ml/{{producto.id}}/"> -->
+   <button class="button icon-left ion-bag button-positive" onclick=";window.location = '#/tab/ml/'+pip.value+'/'+select.value;">$ {{producto.price}}</button>
+  <!-- </a> -->
 
 <!--
   <a class="tab-item" href="#/tab/">
@@ -60,7 +61,7 @@
   <a class="tab-item">
     <i class="icon ion-share"></i>
   </a>  
-  <a class="tab-item" href="#/tab/ml">
+  <a class="tab-item" href="#/tab/ml/{{producto.id}}">
     <i class="icon ion-bag"></i>
   </a>
   -->    

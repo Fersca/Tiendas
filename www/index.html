@@ -25,7 +25,6 @@
 <div class="button-bar">
   <a class="button" href="#/tab/home">Tiendas</a>
   <a class="button" href="#/tab/categories">Categorias</a>
-  <a class="button">Favoritos</a>
 </div>    
 
     	<!--
@@ -77,6 +76,7 @@
 		</ion-view>
     
      </script>
+     
     <script id="categories.html" type="text/ng-template">
     
 		<ion-view title="">
@@ -85,8 +85,8 @@
 		    <ion-list>
 		      <ion-item ng-repeat="categ in categories">
 				<div class="row" row-center>
-				  <div class="col"><div style="font-size: small;">{{categ[0].name.substring(0,18)}}</div><img src="{{categ[0].picture}}" height="120" width="120"></div>
-				  <div class="col"><div style="font-size: small;">{{categ[1].name.substring(0,18)}}</div><img src="{{categ[1].picture}}" height="120" width="120"></div>
+				  <div class="col"><div style="font-size: small;">{{categ[0].name.substring(0,18)}}</div><a href="#/tab/itemcateg/{{categ[0].id}}/{{categ[0].name.substring(0,18)}}"><img src="{{categ[0].picture}}" height="120" width="120"></a></div>
+				  <div class="col"><div style="font-size: small;">{{categ[1].name.substring(0,18)}}</div><a href="#/tab/itemcateg/{{categ[1].id}}/{{categ[1].name.substring(0,18)}}"><img src="{{categ[1].picture}}" height="120" width="120"></a></div>
 				</div>
 		      </ion-item>
 		    </ion-list>
@@ -95,6 +95,6 @@
 		</ion-view>
     
      </script>
-
+   
   </body>
 </html>

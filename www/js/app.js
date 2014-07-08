@@ -45,7 +45,17 @@ angular.module('starter', ['starter.services','ionic','ngSanitize'])
         }
       }
     })
-
+    
+    .state('app.itemcateg', {
+      url: "/itemcateg/:categ",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/itemcateg.html",
+          controller: 'ItemsCategsCtrl'
+        }
+      }
+    })
+    
     .state('app.product', {
       url: "/product/:prodId",
       views: {
@@ -65,7 +75,7 @@ angular.module('starter', ['starter.services','ionic','ngSanitize'])
         }
       }
     })
-
+        
     .state('app.single', {
       url: "/playlists/:brand/:playlistId",
       views: {
@@ -221,6 +231,29 @@ angular.module('starter', ['starter.services','ionic','ngSanitize'])
  	});
 
 })
+
+.controller('ItemsCategsCtrl', function($scope, $resource, $stateParams,$ionicLoading, $timeout) {
+  // Setup the loader
+  $ionicLoading.show({
+    content: '<i class="icon ion-loading-c"></i>',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+	
+	alert('fer1');
+	
+	var cadena = 'https://api.mercadolibre.com/sites/MLA/search?category='+$stateParams.categoryId
+	var res = $resource(cadena);
+ 	var Result = res.get({},function(res1) {	 
+		$scope.productos = res1.results;
+		$scope.categoria = $stateParams.categoria;
+		$ionicLoading.hide();
+ 	});
+
+})
+
 
 .controller('MlCtrl', function($scope, $resource, $stateParams,$ionicLoading,$sce) {
     
