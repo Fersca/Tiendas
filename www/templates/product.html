@@ -18,11 +18,9 @@
     </ion-item>
     </select>
   </label>
-  <input type="hidden" name="pip" id="pip" value="{{producto.id}}">
-
 </div>
 	</div>
-	  
+	<input type="hidden" name="pip" id="pip" value="{{producto.id}}">  
 	  <!--
 	  <div class="item item-divider">
 	  <button class="button button-full icon-left ion-bag button-positive">$ {{producto.price}}</button> 
@@ -51,7 +49,8 @@
 
 
   <!-- <a href="#/tab/ml/{{producto.id}}/"> -->
-   <button class="button icon-left ion-bag button-positive" onclick=";window.location = '#/tab/ml/'+pip.value+'/'+select.value;">$ {{producto.price}}</button>
+   <button ng-if="variations" class="button icon-left ion-bag button-positive" onclick=";window.location = '#/tab/ml/'+pip.value+'/'+select.value;">$ {{producto.price}}</button>
+   <button ng-if="!variations" class="button icon-left ion-bag button-positive" onclick=";window.location = '#/tab/ml/'+pip.value+'/';">$ {{producto.price}}</button>
   <!-- </a> -->
 
 <!--

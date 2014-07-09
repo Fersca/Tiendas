@@ -18,6 +18,34 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
    	
    	listaFinal.push(
    		[
+   		{name:"Perfumes y Fragancias",id: "MLA1271",picture:"http://resources.mlstatic.com/category/images/ebc2e89f-1664-45eb-8354-686cde860c05.png"},
+   		{name:"Zapatos y Sandalias",id:"MLA109026",picture: "http://resources.mlstatic.com/category/images/e737224c-5b51-4233-b887-2d3c9c07f792.png"}
+   		]
+   
+   		// hombre: "http://resources.mlstatic.com/category/images/e737224c-5b51-4233-b887-2d3c9c07f792.png"		
+   		
+   	);
+   	listaFinal.push(
+   		[
+   		{name:"Carteras, Bolsos y Billeteras",id:"MLA110761",picture:"http://resources.mlstatic.com/category/images/f9ae7e4d-e170-40fc-90fa-788bea4eb297.png"},
+   		{name:"Maquillaje",id: "MLA1248",picture:"http://resources.mlstatic.com/category/images/72e2ea5e-8557-4c2d-95d3-d51bfdcbc63e.png"}   		
+   		]
+   	);   	
+   	listaFinal.push(
+   		[
+   		{name:"Pantalones, Jeans y Calzas",id:"MLA109282",picture: "http://resources.mlstatic.com/category/images/36ce8879-836c-46d1-8151-3ee8c4532760.png"},
+   		{name:"Remeras y Musculosas",id:"MLA109042",picture:"http://resources.mlstatic.com/category/images/6d160fc8-3b7d-45ae-a8ab-355ad0f34ee0.png"}
+   		]
+   	);
+	listaFinal.push(
+   		[
+   		{name:"Vestidos y Polleras",id:"MLA109274",picture:"http://resources.mlstatic.com/category/images/19beb13c-7927-42f0-a0ad-532c6419ac8a.png"},
+   		{name:"Saquitos, Sweaters y Chalecos",id:"MLA109081",picture:"http://resources.mlstatic.com/category/images/3e658331-bc73-43ef-96f3-4a00275f3da1.png"}
+   		]
+   	);
+   	   	
+   	listaFinal.push(
+   		[
    		{name:"Accesorios de Moda",id:"MLA3114",picture:"http://resources.mlstatic.com/category/images/bbfd35b1-ae02-4d15-8a49-09bf1d0a16a0.png"},
    		{name:"Bermudas y Shorts",id:"MLA109276",picture:"http://resources.mlstatic.com/category/images/7f2d3ff8-e8c9-4c6b-99c9-ee0fdafcba77.png"}
    		]
@@ -31,19 +59,7 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
    	listaFinal.push(
    		[
    		{name:"Camperas, Tapados y Trenchs",id:"MLA109096",picture:"http://resources.mlstatic.com/category/images/07c98b0c-ea24-43ff-943c-c9c1235aa086.png"},
-   		{name:"Carteras, Bolsos y Billeteras",id:"MLA110761",picture:"http://resources.mlstatic.com/category/images/f9ae7e4d-e170-40fc-90fa-788bea4eb297.png"}
-   		]
-   	);
-   	listaFinal.push(
-   		[
-   		{name:"Enteritos",id:"MLA109254",picture:"http://resources.mlstatic.com/category/images/31bb066e-cf62-4cf4-9ec0-a4332ac979d4.png"},
-   		{name:"Lentes",id:"MLA3959",picture:"http://resources.mlstatic.com/category/images/ff779754-37e0-40af-90a8-59bdb16516b9.png"}
-   		]
-   	);
-   	listaFinal.push(
-   		[
-   		{name:"Pantalones, Jeans y Calzas",id:"MLA109282",picture: "http://resources.mlstatic.com/category/images/36ce8879-836c-46d1-8151-3ee8c4532760.png"},
-   		{name:"Remeras y Musculosas",id:"MLA109042",picture:"http://resources.mlstatic.com/category/images/6d160fc8-3b7d-45ae-a8ab-355ad0f34ee0.png"}
+   		{name:"Zapatillas",id: "MLA109027",picture:"http://resources.mlstatic.com/category/images/3ed43e48-c9ca-4f11-a924-3f5e8c59e042.png"},
    		]
    	);
    	listaFinal.push(
@@ -54,28 +70,46 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
    	);
    	listaFinal.push(
    		[
-   		{name:"Ropa de Bebes",id:"MLA1455",picture:"http://resources.mlstatic.com/category/images/58a1a466-d9b2-48bf-8584-9df93c4461dd.png"},
-   		{name:"Saquitos, Sweaters y Chalecos",id:"MLA109081",picture:"http://resources.mlstatic.com/category/images/3e658331-bc73-43ef-96f3-4a00275f3da1.png"}
+   		{name:"Trajes de Baño",id:"MLA109270",picture: "http://resources.mlstatic.com/category/images/f586ff59-c07b-4dbe-a23e-927317f2d41e.png"},
+   		{name:"Lentes",id:"MLA3959",picture:"http://resources.mlstatic.com/category/images/ff779754-37e0-40af-90a8-59bdb16516b9.png"}
+   		]
+   	);
+
+   	/////////////// desde aca en adelante no es mas ropa
+   	
+   	listaFinal.push(
+   		[
+   		{name:"Computación",id:"MLA1648",picture: "http://resources.mlstatic.com/category/images/f96f9ecc-dfe6-4cf9-a270-4c0cee23f868.png"},
+   		{name:"Hogar, Muebles y Jardín",id:"MLA1574",picture:"http://resources.mlstatic.com/category/images/5194ee98-9095-4ef6-b9a5-c78073fa60af.png"}
    		]
    	);
    	listaFinal.push(
    		[
-   		{name:"Trajes",id: "MLA109089",picture:"http://resources.mlstatic.com/category/images/b45e09a7-7cbd-4c5b-879e-67c50b41c71f.png"},
-   		{name:"Trajes de Baño",id:"MLA109270",picture: "http://resources.mlstatic.com/category/images/f586ff59-c07b-4dbe-a23e-927317f2d41e.png"}
+   		{name:"Electrodomésticos y Aires Ac.",id:"MLA5726",picture: "http://resources.mlstatic.com/category/images/104bbc6d-bf5c-4e84-8e17-93b8e6d16553.png"},
+   		{name:"Juegos y Juguetes",id:"MLA1132",picture:"http://resources.mlstatic.com/category/images/252f33d2-dae8-4eaf-a903-a41f02c504b4.png"}
    		]
    	);
    	listaFinal.push(
    		[
-   		{name:"Uniformes",id:"MLA12554",picture:"http://resources.mlstatic.com/category/images/c692d7fe-2f2d-45b2-a925-c197b71d7029.png"},
-   		{name:"Vestidos y Polleras",id:"MLA109274",picture:"http://resources.mlstatic.com/category/images/19beb13c-7927-42f0-a0ad-532c6419ac8a.png"}
+   		{name:"Electrónica, Audio y Video",id:"MLA1000",picture: "http://resources.mlstatic.com/category/images/943ec641-717e-49cb-8a34-2f40ba367f5a.png"},
+   		{name:"Salud y Belleza",id:"MLA1246",picture:"http://resources.mlstatic.com/category/images/d1c445e9-f3bb-49e8-8cd3-3cfa81e57cf9.png"}
    		]
    	);
    	listaFinal.push(
    		[
-   		{name:"Zapatillas",id: "MLA109027",picture:"http://resources.mlstatic.com/category/images/3ed43e48-c9ca-4f11-a924-3f5e8c59e042.png"},
-   		{name:"Zapatos y Sandalias",id:"MLA109026",picture: "http://resources.mlstatic.com/category/images/31bb066e-cf62-4cf4-9ec0-a4332ac979d4.png"}
+   		{name:"Bebes",id:"MLA1384",picture: "http://resources.mlstatic.com/category/images/c2d12ece-dc6b-4408-b6f7-23f797f900e3.png"},
+   		{name:"Camaras y Accesorios",id:"MLA1039",picture:"http://resources.mlstatic.com/category/images/9a56d785-c169-4040-b0e3-599f2e669d83.png"}
    		]
    	);
+   	listaFinal.push(
+   		[
+   		{name:"Música, Películas y Series",id:"MLA1168",picture: "http://resources.mlstatic.com/category/images/8b00e391-776a-4d39-8af4-ff6cf1d9e584.png"},
+   		{name:"Delicatessen y Vinos",id:"MLA1403",picture:"http://resources.mlstatic.com/category/images/39e2dcb4-05b0-4f36-9f22-7c5bc6eb180e.png"}
+   		]
+   	);
+   	
+   	
+   	
 
    	$scope.categories = listaFinal;	
 	$ionicLoading.hide();
@@ -144,7 +178,7 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
     showDelay: 0
   });
 		
-	var cadena = 'https://api.mercadolibre.com/sites/MLA/search?category='+$stateParams.categ
+	var cadena = 'https://api.mercadolibre.com/sites/MLA/search?official_store=yes&category='+$stateParams.categ
 	var res = $resource(cadena);
  	var Result = res.get({},function(res1) {
  	
@@ -408,6 +442,15 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 .controller('MlCtrl', function($scope, $resource, $stateParams,$ionicLoading,$sce) {
     
 	$scope.producto = 'https://buyingflow.mercadolibre.com.ar/checkout/start?item_id='+$stateParams.item+'&variation='+$stateParams.variation
+    
+    $scope.trustSrc = function(src) {
+    	return $sce.trustAsResourceUrl(src);
+  	}
+
+})
+.controller('MlCtrl2', function($scope, $resource, $stateParams,$ionicLoading,$sce) {
+    
+	$scope.producto = 'https://buyingflow.mercadolibre.com.ar/checkout/start?item_id='+$stateParams.item
     
     $scope.trustSrc = function(src) {
     	return $sce.trustAsResourceUrl(src);

@@ -70,6 +70,16 @@ angular.module('ionicApp', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('tab.ml2', {
+      url: "/ml/:item/",
+      views: {
+        'home-tab' :{
+          templateUrl: "templates/ml.html",
+          controller: 'MlCtrl2'
+        }
+      }
+    })
+
     .state('tab.single', {
       url: "/playlists/:brand/:playlistId",
       views: {
