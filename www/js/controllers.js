@@ -138,19 +138,28 @@ angular.module('starter.controllers', ['starter.services','ionic','ngSanitize'])
 			}
 		}
  		
+ 		//filtro las que esta sin status active
+ 		//carga los logos en un array de a 3
+ 		var listaActive = [];	
+		for (var indexactive = 0; indexactive < res1.length; indexactive++) {
+			if (res1[indexactive].brands[0].status=="active"){
+				listaActive.push(res1[indexactive])
+			}			
+		}
+ 		
  		//carga los logos en un array de a 3
  		var index;
- 		var listaFinal = [];
-		for (index = 0; index < res1.length; index=index+3) {
-			var lista = [res1[index],res1[index+1],res1[index+2]];
+ 		var listaFinal = [];	
+		for (index = 0; index < listaActive.length; index=index+3) {
+			var lista = [listaActive[index],listaActive[index+1],listaActive[index+2]];
 		    listaFinal.push(lista);
 		}
 
 		//completa la lista con los primeros si no es multiplo de 3
-		if (res1.length%3==2){
+		if (listaActive.length%3==2){
 			listaFinal[listaFinal.length-1][2] = listaFinal[0][0]; 
 		} 
-		if (res1.length%3==1){
+		if (listaActive.length%3==1){
 			listaFinal[listaFinal.length-1][2] = listaFinal[0][0];
 			listaFinal[listaFinal.length-1][1] = listaFinal[0][1]; 
 		} 
